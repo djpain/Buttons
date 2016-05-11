@@ -1,6 +1,6 @@
-            /* Buttons to USB Keyboard Example
+/* Buttons to USB Joystick Example
 
-   You must select Keyboard from the "Tools > USB Type" menu
+   You must select Joystick from the "Tools > USB Type" menu
 
    This example code is in the public domain.
 */
@@ -10,18 +10,18 @@
 // Create Bounce objects for each button.  The Bounce object
 // automatically deals with contact chatter or "bounce", and
 // it makes detecting changes very simple.
-Bounce button0 = Bounce(0, 10);
-Bounce button1 = Bounce(1, 10);  // 10 = 10 ms debounce time
-Bounce button2 = Bounce(2, 10);  // which is appropriate for
-Bounce button3 = Bounce(3, 10);  // most mechanical pushbuttons
-Bounce button4 = Bounce(13, 10);
-Bounce button5 = Bounce(14, 10);  // if a button is too "sensitive"
-Bounce button6 = Bounce(21, 10);  // to rapid touch, you can
-Bounce button7 = Bounce(20, 10);  // increase this time.
-Bounce button8 = Bounce(19, 10);
-Bounce button9 = Bounce(17, 10);
-Bounce button10 = Bounce(16, 10);
-Bounce button11 = Bounce(15, 10);
+Bounce button0 = Bounce(0, 20);
+Bounce button1 = Bounce(1, 20);  // 10 = 10 ms debounce time
+Bounce button2 = Bounce(2, 20);  // which is appropriate for
+Bounce button3 = Bounce(3, 20);  // most mechanical pushbuttons
+Bounce button4 = Bounce(13, 20);
+Bounce button5 = Bounce(14, 20);  // if a button is too "sensitive"
+Bounce button6 = Bounce(21, 20);  // to rapid touch, you can
+Bounce button7 = Bounce(20, 20);  // increase this time.
+Bounce button8 = Bounce(19, 20);
+Bounce button9 = Bounce(17, 20);
+Bounce button10 = Bounce(16, 20);
+Bounce button11 = Bounce(15, 20);
 
 
 void setup() {
@@ -71,41 +71,45 @@ void loop() {
   // Update the Joystick buttons only upon changes.
   // falling = high (not pressed - voltage from pullup resistor)
   //           to low (pressed - button connects pin to ground)
+  // Check each button for "falling" edge.
+  // Update the Joystick buttons only upon changes.
+  // falling = high (not pressed - voltage from pullup resistor)
+  //           to low (pressed - button connects pin to ground)
   if (button0.fallingEdge()) {
-    Keyboard.println("Q ");
+    Joystick.button(1, 1);
   }
   if (button1.fallingEdge()) {
-    Keyboard.println("W ");
+    Joystick.button(2, 1);
   }
   if (button2.fallingEdge()) {
-    Keyboard.println("E ");
+    Joystick.button(3, 1);
   }
   if (button3.fallingEdge()) {
-    Keyboard.println("R ");
+    Joystick.button(4, 1);
   }
   if (button4.fallingEdge()) {
-    Keyboard.println("T ");
+    Joystick.button(5, 1);
   }
   if (button5.fallingEdge()) {
-    Keyboard.println("Y ");
+    Joystick.button(6, 1);
   }
   if (button6.fallingEdge()) {
-    Keyboard.println("U ");
+    Joystick.button(7, 1);
   }
   if (button7.fallingEdge()) {
-    Keyboard.println("I ");
+    Joystick.button(8, 1);
   }
   if (button8.fallingEdge()) {
-    Keyboard.println("O ");
+    Joystick.button(9, 1);
   }
   if (button9.fallingEdge()) {
-    Keyboard.println("P ");
+    Joystick.button(10, 1);
   }
   if (button10.fallingEdge()) {
-    Keyboard.println("A ");
+    Joystick.button(11, 1);
   }
   if (button11.fallingEdge()) {
-    Keyboard.println("S ");
+    Joystick.button(12, 1);
   }
 }
 
